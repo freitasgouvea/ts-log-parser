@@ -1,6 +1,8 @@
 # ts-log-parser
 
-ts-log-parser is a Node TypeScript log parser program that processes log files and generates reports. It parses log files from a quake games and provides a summary of each game and player ranks.
+ts-log-parser is a Node TypeScript log parser program that processes log files and generates reports. 
+
+It parses log files from a quake games and provides a summary of each game and players rank.
 
 Before run this project, ensure you have [Node.js](https://nodejs.org) installed on your machine.
 
