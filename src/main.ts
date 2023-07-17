@@ -14,7 +14,14 @@ export function main(logFile: string): GameReportType {
 }
 
 export function printReport(report: GameReportType) {
-  const jsonReport = JSON.stringify(report.matches);
+  const convertedReport: { [key: string]: any } = {};
+
+  report.matches.forEach((match, index) => {
+    const gameKey = `game_${index + 1}`;
+    convertedReport[gameKey] = match;
+  });
+
+  const jsonReport = JSON.stringify(convertedReport);
   console.log(jsonReport);
 }
 
