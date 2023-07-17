@@ -14,8 +14,11 @@
     "type": "git",
     "url": "git+https://github.com/freitasgouvea/ts-log-parser.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "TypeScript",
+    "log parser"
+  ],
+  "author": "Flavio Gouvea",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/freitasgouvea/ts-log-parser/issues"
