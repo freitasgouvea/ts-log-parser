@@ -5,11 +5,13 @@ export class MatchData {
   totalKills: number;
   players: string[];
   kills: { [player: string]: number };
+  killByMeans: { [mean: string]:number };
 
   constructor() {
     this.totalKills = 0;
     this.players = [];
     this.kills = {};
+    this.killByMeans = {};
   }
 
   private processPlayer(line: string) {
@@ -24,8 +26,10 @@ export class MatchData {
     const killingEvent = fragments[2];
     const author = killingEvent?.split('killed')[0].trim();
     const victim = killingEvent?.split('killed')[1]?.split('by')[0].trim();
+    const meanOfDeath = killingEvent?.split('killed')[1]?.split('by')[1].trim();
 
     this.totalKills++;
+    this.killByMeans[meanOfDeath] = (this.killByMeans[meanOfDeath] || 0) + 1;
 
     if (author !== '<world>') {
       this.kills[author] = (this.kills[author] || 0) + 1;

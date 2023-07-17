@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { GameReport } from './classes/GameReport';
-import { GameReportType } from './types/types';
+import { GameReportType, MatchDataType } from './types/types';
 
 const logFilePath = path.join(__dirname, 'log/quake.log');
 const logFileContent = fs.readFileSync(logFilePath, 'utf-8');
@@ -14,7 +14,7 @@ export function main(logFile: string): GameReportType {
 }
 
 export function printReport(report: GameReportType) {
-  const convertedReport: { [key: string]: any } = {};
+  const convertedReport: { [key: string]: MatchDataType } = {};
 
   report.matches.forEach((match, index) => {
     const gameKey = `game_${index + 1}`;

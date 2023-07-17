@@ -7,5 +7,6 @@ export type MatchDataType = {
   totalKills: number;
   players: string[];
   kills: { [player: string]: number };
+  killByMeans: { [mean: string]:number };
   processMatch: (lines: string[]) => void;
 }
