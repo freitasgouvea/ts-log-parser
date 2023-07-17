@@ -1,4 +1,5 @@
 import { EventType } from '../config/enum';
+import { orderByValue } from '../utils/orderByValue';
 import { parseLine } from '../utils/parseLine';
 
 export class MatchData {
@@ -52,6 +53,9 @@ export class MatchData {
         default:
           break;
       }
+
+      this.kills = orderByValue(this.kills);
+      this.killByMeans = orderByValue(this.killByMeans);
     }
   }
 }

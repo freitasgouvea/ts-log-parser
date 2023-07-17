@@ -21,6 +21,9 @@ describe('main', () => {
     expect(report.matches[0].kills["Isgalamido"]).toBe(1);
     expect(report.matches[0].kills["Assasinu Credi"]).toBe(2);
     expect(report.matches[0].killByMeans["MOD_ROCKET_SPLASH"]).toBe(4);
+    expect(report.playerRank["Zeh"]).toBe(2);
+    expect(report.playerRank["Isgalamido"]).toBe(1);
+    expect(report.playerRank["Assasinu Credi"]).toBe(2);
   });
 
   it('should not create a report object from a log file with world in kills object', () => {
